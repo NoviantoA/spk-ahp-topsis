@@ -14,16 +14,16 @@ class KriteriaSeeder extends Seeder
     public function run(): void
     {
         $data = [
-            ['kriteria_id' => 1, 'tahun' => 2024, 'kriteria' => 'Skill', 'atribut' => 'benefit'],
-            ['kriteria_id' => 2, 'tahun' => 2024, 'kriteria' => 'Komunikasi', 'atribut' => 'benefit'],
-            ['kriteria_id' => 3, 'tahun' => 2024, 'kriteria' => 'Masa Kerja', 'atribut' => 'cost'],
-            ['kriteria_id' => 4, 'tahun' => 2024, 'kriteria' => 'Pengalaman', 'atribut' => 'benefit'],
-            ['kriteria_id' => 5, 'tahun' => 2024, 'kriteria' => 'Pendidikan', 'atribut' => 'benefit'],
-            ['kriteria_id' => 6, 'tahun' => 2025, 'kriteria' => 'TTTT', 'atribut' => 'benefit'],
-            ['kriteria_id' => 7, 'tahun' => 2025, 'kriteria' => 'TITI', 'atribut' => 'benefit'],
-            ['kriteria_id' => 8, 'tahun' => 2025, 'kriteria' => 'PAPA', 'atribut' => 'benefit'],
-            ['kriteria_id' => 9, 'tahun' => 2025, 'kriteria' => 'PU pu', 'atribut' => 'benefit'],
-            ['kriteria_id' => 10, 'tahun' => 2025, 'kriteria' => 'PGPG', 'atribut' => 'benefit'],
+            ['kode_kriteria' => 'C2', 'tahun' => 2024, 'nama_kriteria' => 'Skill', 'atribut' => 'benefit'],
+            ['kode_kriteria' => 'C3', 'tahun' => 2024, 'nama_kriteria' => 'Komunikasi', 'atribut' => 'benefit'],
+            ['kode_kriteria' => 'C4', 'tahun' => 2024, 'nama_kriteria' => 'Masa Kerja', 'atribut' => 'cost'],
+            ['kode_kriteria' => 'C5', 'tahun' => 2024, 'nama_kriteria' => 'Pengalaman', 'atribut' => 'benefit'],
+            ['kode_kriteria' => 'C1', 'tahun' => 2024, 'nama_kriteria' => 'Pendidikan', 'atribut' => 'benefit'],
+            ['kode_kriteria' => 'TT', 'tahun' => 2025, 'nama_kriteria' => 'TTTT', 'atribut' => 'benefit'],
+            ['kode_kriteria' => 'TI', 'tahun' => 2025, 'nama_kriteria' => 'TITI', 'atribut' => 'benefit'],
+            ['kode_kriteria' => 'PA', 'tahun' => 2025, 'nama_kriteria' => 'PAPA', 'atribut' => 'benefit'],
+            ['kode_kriteria' => 'PU', 'tahun' => 2025, 'nama_kriteria' => 'PU pu', 'atribut' => 'benefit'],
+            ['kode_kriteria' => 'PG', 'tahun' => 2025, 'nama_kriteria' => 'PGPG', 'atribut' => 'benefit'],
         ];
 
         foreach ($data as $item) {

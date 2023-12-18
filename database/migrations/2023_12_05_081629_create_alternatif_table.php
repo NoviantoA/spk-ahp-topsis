@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('alternatif', function (Blueprint $table) {
             $table->id('alternatif_id');
+            $table->string('kode_alternatif');
             $table->year('tahun');
             $table->string('nama_alternatif');
             $table->string('jabatan');
-            $table->double('total');
-            $table->integer('rank');
+            $table->double('total')->nullable();
+            $table->integer('rank')->nullable();
             $table->timestamps();
         });
     }

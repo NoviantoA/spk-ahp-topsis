@@ -1,4 +1,10 @@
+
+
 @extends('layouts.admin.dashboard')
+@push('style')
+<link rel="stylesheet" href="{{ asset('assets/plugins/select2/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+@endpush
 @section('title')
     Admin || Dashboard
 @endsection
@@ -6,30 +12,22 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
         <div class="card">
-            <form class="card-body form-repeater" action="{{ route('periode.store') }}" method="post" enctype="multipart/form-data">
+            <form class="card-body form-repeater" action="{{ route('alternatif.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
-              <h6>1. Informasi KKN</h6>
               <div class="row g-3">
                 <div class="row mb-3 mt-4">
-                    <label class="col-sm-2 form-label"  for="basic-icon-default-phone">Tahun</label>
+                    <label class="col-sm-2 form-label" for="basic-icon-default-message">Periode</label>
                     <div class="col-sm-10">
-                      <div class="input-group input-group-merge">
-                        <span id="basic-icon-default-fullname2" class="input-group-text"
-                          ><i class="ti ti-signature"></i
-                        ></span>
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="basic-icon-default-fullname"
-                          placeholder="0"
-                          aria-describedby="basic-icon-default-fullname2"
-                          name="tahun"
-                        />
-                      </div>
+                        <select class="form-control select2bs4" name="tahun" style="width: 100%;">
+                            <option selected="selected">--- Pilih Periode ---</option>
+                            @foreach ($periode as $data)
+                            <option value="{{ $data->tahun }}">{{ $data->tahun }}</option>
+                            @endforeach
+                          </select>
                     </div>
                   </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 form-label"  for="basic-icon-default-phone">Nama</label>
+                    <label class="col-sm-2 form-label"  for="basic-icon-default-phone">Nama Alternatif</label>
                     <div class="col-sm-10">
                       <div class="input-group input-group-merge">
                         <span id="basic-icon-default-fullname2" class="input-group-text"
@@ -39,29 +37,42 @@
                           type="text"
                           class="form-control"
                           id="basic-icon-default-fullname"
-                          placeholder="Masukan nama periode"
+                          placeholder="Masukan nama alternatif"
                           aria-describedby="basic-icon-default-fullname2"
-                          name="nama"
+                          name="nama_alternatif"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 form-label"  for="basic-icon-default-phone">Kode Alternatif</label>
+                    <div class="col-sm-10">
+                      <div class="input-group input-group-merge">
+                        <span id="basic-icon-default-fullname2" class="input-group-text"
+                          ><i class="ti ti-signature"></i
+                        ></span>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="basic-icon-default-fullname"
+                          placeholder="Masukan nama alternatif"
+                          aria-describedby="basic-icon-default-fullname2"
+                          name="kode_alternatif"
                         />
                       </div>
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label class="col-sm-2 form-label" for="basic-icon-default-message">Deskripsi</label>
+                    <label class="col-sm-2 form-label" for="basic-icon-default-message">Jabatan</label>
                     <div class="col-sm-10">
-                      <div class="input-group input-group-merge">
-                        <span id="basic-icon-default-message2" class="input-group-text"
-                          ><i class="ti ti-text-wrap-disabled"></i
-                        ></span>
-                        <textarea
-                          id="basic-icon-default-message"
+                        <input
+                          type="text"
                           class="form-control"
-                          placeholder="Masukan deskripsi"
-                          aria-label="Masukan deskripsi"
-                          aria-describedby="basic-icon-default-message2"
-                          name="keterangan"
-                        ></textarea>
-                      </div>
+                          id="basic-icon-default-fullname"
+                          placeholder="Masukan nama jabatan"
+                          aria-describedby="basic-icon-default-fullname2"
+                          name="jabatan"
+                        />
                     </div>
                   </div>
               <div class="pt-4">
@@ -84,6 +95,13 @@
                 "buttons": ["csv", "excel", "pdf", "print"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         });
+        function initializeSelect2() {
+        $(document).ready(function() {
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            });
+        });
+    }
     </script>
      <script>
         document.getElementById('viewDataLink').addEventListener('click', function() {

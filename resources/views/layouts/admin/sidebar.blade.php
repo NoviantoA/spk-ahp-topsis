@@ -30,13 +30,13 @@
           <div class="badge bg-label-primary rounded-pill ms-auto">2</div>
         </a>
         <ul class="menu-sub">
-          <li class="menu-item {{ request()->is('all-kriteria*') ? 'active' : '' }}">
-            <a href="{{ route('periode') }}" class="menu-link">
+          <li class="menu-item {{ request()->is('kriteria-all*') ? 'active' : '' }}">
+            <a href="{{ route('kriteria') }}" class="menu-link">
               <div>Kriteria</div>
             </a>
           </li>
-          <li class="menu-item {{ request()->is('nilai-bobot-kriteria*') ? 'active' : '' }}">
-            <a href="{{ route('periode') }}" class="menu-link">
+          <li class="menu-item {{ request()->is('kriteria-nilai-bobot*') ? 'active' : '' }}">
+            <a href="{{ route('kriteria.nilai.bobot') }}" class="menu-link">
               <div>Nilai Bobot Kriteria</div>
             </a>
           </li>
@@ -49,13 +49,13 @@
           <div class="badge bg-label-primary rounded-pill ms-auto">2</div>
         </a>
         <ul class="menu-sub">
-          <li class="menu-item {{ request()->is('all-alternatif*') ? 'active' : '' }}">
-            <a href="{{ route('periode') }}" class="menu-link">
+          <li class="menu-item {{ request()->is('alternatif-all*') ? 'active' : '' }}">
+            <a href="{{ route('alternatif') }}" class="menu-link">
               <div>Alternatif</div>
             </a>
           </li>
-          <li class="menu-item {{ request()->is('nilai-bobot-kriteria*') ? 'active' : '' }}">
-            <a href="{{ route('periode') }}" class="menu-link">
+          <li class="menu-item {{ request()->is('alternatif-nilai-bobot*') ? 'active' : '' }}">
+            <a href="{{ route('alternatif.nilai.bobot') }}" class="menu-link">
               <div>Nilai Bobot Alternatif</div>
             </a>
           </li>
@@ -63,7 +63,7 @@
       </li>
       <li class="menu-item {{ request()->is('perhitungan*') ? 'active' : '' }}">
         <a
-          href="{{ route('periode') }}"
+          href="{{ route('perhitungan') }}"
           class="menu-link ">
           <i class="menu-icon tf-icons bx bx-math"></i>
           <div>Perhitungan</div>

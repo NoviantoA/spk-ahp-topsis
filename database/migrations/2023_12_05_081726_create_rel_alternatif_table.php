@@ -14,12 +14,10 @@ return new class extends Migration
         Schema::create('rel_alternatif', function (Blueprint $table) {
             $table->id('rel_alternatif_id');
             $table->year('tahun');
-            $table->unsignedBigInteger('alternatif_id');
-            $table->unsignedBigInteger('kriteria_id');
+            $table->string('kode_alternatif');
+            $table->string('kode_kriteria');
             $table->double('nilai');
             $table->timestamps();
-            $table->foreign('alternatif_id')->references('alternatif_id')->on('alternatif')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('kriteria_id')->references('kriteria_id')->on('kriteria')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
